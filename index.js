@@ -1,5 +1,3 @@
-
-//var pagseguro = require('pagseguro');    
 var express = require("express");
 var app = express();
 
@@ -8,19 +6,7 @@ app.get("/",(req, res) => {
     console.log("Olá mundo!");
     res.send("União flasco")
 
-});
-
-
-
-app.listen(3000,() => {
-    console.log("União flasco!");
-})
-    
-    
-    
-    
-    
-    /*
+    var pagseguro = require('pagseguro');  
     pag = new pagseguro({
         email : 'victordevtb@gmail.com',
         token: '9E1086BDE0A44443B77766977BF74901',
@@ -89,4 +75,10 @@ app.listen(3000,() => {
             console.log(err);
         }
         console.log(res);
-    });*/
+    });
+});
+
+
+app.listen(3000,() => {
+    console.log("União flasco!");
+})
