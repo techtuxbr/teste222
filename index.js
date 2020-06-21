@@ -66,8 +66,8 @@ app.get("/",(req, res) => {
 
     //Configuranto URLs de retorno e de notificação (Opcional)
     //ver https://pagseguro.uol.com.br/v2/guia-de-integracao/finalizacao-do-pagamento.html#v2-item-redirecionando-o-comprador-para-uma-url-dinamica
-    pag.setRedirectURL("http://www.lojamodelo.com.br/retorno");
-    pag.setNotificationURL("http://www.lojamodelo.com.br/notificacao");
+    pag.setRedirectURL("http://192.241.131.222:3000/retorno");
+    pag.setNotificationURL("http://192.241.131.222:3000/not");
 
     //Enviando o xml ao pagseguro
     pag.send(function(err, res) {
@@ -78,6 +78,23 @@ app.get("/",(req, res) => {
     });
 });
 
+app.get("/retorno",(req, res) => {
+    res.send("UNIÃO FLASCO!");
+});
+
+app.get("/not",(req, res) => {
+    console.log(req.query);
+    console.log(req.body);
+    console.log("Recebi notificação via GET");
+    res.send("OK GET");
+});
+
+app.post("/not",(req, res) => {
+    console.log(req.query);
+    console.log(req.body);
+    console.log("Recebi notificação via post");
+    res.send("OK POST");
+});
 
 app.listen(3000,() => {
     console.log("União flasco!");
