@@ -1,8 +1,5 @@
-    //Inicializar a função com o e-mail e token
-    var pag, pagseguro;
-    pagseguro = require('pagseguro');
-    
-    
+
+//var pagseguro = require('pagseguro');    
 var express = require("express");
 var app = express();
 
@@ -23,7 +20,7 @@ app.listen(3000,() => {
     
     
     
-    
+    /*
     pag = new pagseguro({
         email : 'victordevtb@gmail.com',
         token: '9E1086BDE0A44443B77766977BF74901',
@@ -92,4 +89,4 @@ app.listen(3000,() => {
             console.log(err);
         }
         console.log(res);
-    });
+    });*/
